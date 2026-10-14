@@ -139,7 +139,7 @@ function ContactPage() {
                   maxLength={100}
                   autoComplete="name"
                 />
-                {errors.name && <p className="mt-1 text-xs text-destructive">{errors.name}</p>}
+                {errors["name"] && <p className="mt-1 text-xs text-destructive">{errors["name"]}</p>}
               </div>
               <div>
                 <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-foreground">Email</label>
@@ -152,7 +152,7 @@ function ContactPage() {
                   maxLength={255}
                   autoComplete="email"
                 />
-                {errors.email && <p className="mt-1 text-xs text-destructive">{errors.email}</p>}
+                {errors["email"] && <p className="mt-1 text-xs text-destructive">{errors["email"]}</p>}
               </div>
               <div>
                 <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-foreground">Message</label>
@@ -164,7 +164,7 @@ function ContactPage() {
                   className={inputClass}
                   maxLength={1000}
                 />
-                {errors.message && <p className="mt-1 text-xs text-destructive">{errors.message}</p>}
+                {errors["message"] && <p className="mt-1 text-xs text-destructive">{errors["message"]}</p>}
               </div>
               <button
                 type="submit"

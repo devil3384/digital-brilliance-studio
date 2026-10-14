@@ -8,8 +8,8 @@ type ProductsSearch = { q?: string; category?: string };
 
 export const Route = createFileRoute("/products")({
   validateSearch: (search: Record<string, unknown>): ProductsSearch => ({
-    q: typeof search.q === "string" ? search.q : "",
-    category: typeof search.category === "string" ? search.category : "All",
+    q: typeof search["q"] === "string" ? search["q"] : "",
+    category: typeof search["category"] === "string" ? search["category"] : "All",
   }),
   head: () => ({
     meta: [
@@ -30,8 +30,8 @@ export const Route = createFileRoute("/products")({
 
 function ProductsPage() {
   const search = Route.useSearch();
-  const [query, setQuery] = useState(search.q ?? "");
-  const [category, setCategory] = useState<string>(search.category ?? "All");
+  const [query, setQuery] = useState(search["q"] ?? "");
+  const [category, setCategory] = useState<string>(search["category"] ?? "All");
   const [sort, setSort] = useState<"featured" | "low" | "high">("featured");
 
   const filtered = useMemo(() => {
